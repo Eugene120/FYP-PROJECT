@@ -28,13 +28,19 @@ try:
         print("category_name =" ,row [1])
         print("category_image =" ,row[2])
 
+    
+
+
     cursor = connection.cursor()
-    postgreSQL_select_Query = "select * from person"
+    postgreSQL_select_Query = "insert into category(category_name, category_image) values('hello' ,bytea('C:/Users/L30809.NYPSIT.000/Desktop/maxx.jpg'))"
     
     cursor.execute(postgreSQL_select_Query)
     print(" selecting rows from table")
     person_records= cursor.fetchall()
 
+    cursor = connection.cursor()
+    postgreSQL_select_Query = "select * from person"
+    
     print("Print each row and it's columns values1")
     for row in person_records:
         print("id= " ,row[0],)
