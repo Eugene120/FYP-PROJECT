@@ -17,6 +17,8 @@ try:
 
     cursor = connection.cursor()
     postgreSQL_select_Query = "select * from category"
+
+    
     
     cursor.execute(postgreSQL_select_Query)
     print(" selecting rows from table")
@@ -31,8 +33,7 @@ try:
     
 
 
-    cursor = connection.cursor()
-    postgreSQL_select_Query = "insert into category(category_name, category_image) values('hello' ,bytea('C:/Users/L30809.NYPSIT.000/Desktop/maxx.jpg'))"
+    
     
     cursor.execute(postgreSQL_select_Query)
     print(" selecting rows from table")
@@ -40,12 +41,16 @@ try:
 
     cursor = connection.cursor()
     postgreSQL_select_Query = "select * from person"
-    
+
     print("Print each row and it's columns values1")
     for row in person_records:
         print("id= " ,row[0],)
         print("name =" ,row [1])
-        print("country =" ,row[2])    
+        print("country =" ,row[2]) 
+
+    cursor.execute("insert into category(category_name, category_image) values('hello' ,bytea('C:/Users/L30809.NYPSIT.000/Documents/GitHub/FYP-PROJECT/dataset'))")
+   
+       
 
 except (Exception, psycopg2.Error) as error :
     print ("Error while connecting to PostgreSQL", error)
