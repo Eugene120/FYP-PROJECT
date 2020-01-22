@@ -33,14 +33,14 @@ try:
     
 
 
-    
+    cursor = connection.cursor()
+    postgreSQL_select_Query = "select * from person"
     
     cursor.execute(postgreSQL_select_Query)
     print(" selecting rows from table")
     person_records= cursor.fetchall()
 
-    cursor = connection.cursor()
-    postgreSQL_select_Query = "select * from person"
+   
 
     print("Print each row and it's columns values1")
     for row in person_records:
